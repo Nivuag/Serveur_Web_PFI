@@ -16,7 +16,7 @@ class Repository {
     constructor(objectsName, cached = true, params = null) {
         this.objectsName = objectsName.toLowerCase();
         this.objectsList = null;
-        this.objectsFile = `./data/${objectsName}.json`;
+        this.objectsFile = `./data/${this.objectsName}.json`;
         this.initEtag();
         this.cached = cached;
         this.params = params;
