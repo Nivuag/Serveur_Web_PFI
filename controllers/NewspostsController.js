@@ -10,7 +10,7 @@ module.exports =
 class NewspostsController extends require('./Controller') {
     constructor(req, res){
         super(req, res, false /* needAuthorization */);
-        this.newsRepository = new newsRepository(req,true,this.params);
+        this.newsRepository = new newsRepository(req,this.params);
     }
 
     head() {
