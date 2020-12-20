@@ -9,7 +9,7 @@ module.exports =
 // : Bunch of stuffs needs to be updated
 class NewspostsController extends require('./Controller') {
     constructor(req, res){
-        super(req, res, false /* needAuthorization */);
+        super(req, res, false /* needAuthorization */);true
         this.newsRepository = new newsRepository(req,this.params);
     }
 

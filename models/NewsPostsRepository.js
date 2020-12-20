@@ -7,7 +7,7 @@ const News = require('./NewsPost');
 module.exports = 
 class NewsPostsRepository extends Repository {
     constructor(req, params){
-        super('newsPosts', true);
+        super('newsPosts',true,params);
         this.users = new Repository('Users');
         this.req = req;
         this.params = params;
