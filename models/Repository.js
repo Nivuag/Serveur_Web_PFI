@@ -87,6 +87,7 @@ class Repository {
             return null;
         }
     }
+  
     getAll() {
         if (this.params) {
             let collectionFilter = 
@@ -95,6 +96,7 @@ class Repository {
         }
         return this.objects();
     }
+  
     get(id){
         for(let object of this.objects()){
             if (object.Id === id) {

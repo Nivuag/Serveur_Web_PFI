@@ -1,5 +1,6 @@
 const Repository = require('./Repository');
 const ImageFilesRepository = require('./imageFilesRepository.js');
+const CollectionFilter = require('./collectionFilter');
 const Image = require('./images.js');
 const utilities = require("../utilities");
 const News = require('./NewsPost');
@@ -52,7 +53,17 @@ class NewsPostsRepository extends Repository {
     }
 
     getAll() {
-        return this.bindNewsPostsAndThumbnails(super.getAll());
+      
+        if (this.params) {
+            let ListeObjectAvecUserName = this.bindNewsPostsAndThumbnails(this.read());
+            let collectionFilter = 
+            new CollectionFilter(this.objects(), this.params);
+            return collectionFilter.get();
+        }
+        
+        
+      
+      return this.objects();
     }
 
     add(news) {
