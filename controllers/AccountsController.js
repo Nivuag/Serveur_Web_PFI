@@ -141,7 +141,7 @@ class AccountsController extends require('./Controller') {
             index ++;
         }
         NewsPostsRepository.removeByIndex(indexToDelete);
-        Cache.clear('newsPosts');
+        Cache.clear('newsposts');
     }
 
     remove(id) {

@@ -55,14 +55,11 @@ class NewsPostsRepository extends Repository {
     getAll() {
       
         if (this.params) {
-            let ListeObjectAvecUserName = this.bindNewsPostsAndThumbnails(this.read());
+            let ListeObjectAvecUserName = this.bindNewsPostsAndThumbnails(this.objects());
             let collectionFilter = 
-            new CollectionFilter(this.objects(), this.params);
+            new CollectionFilter(ListeObjectAvecUserName, this.params);
             return collectionFilter.get();
         }
-        
-        
-      
       return this.objects();
     }
 
